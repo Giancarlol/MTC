@@ -9,10 +9,17 @@ export interface Question {
   alternatives: Alternative[];
 }
 
-export interface Group {
+export interface SubCategory {
   id: number;
   name: string;
   questions: Question[];
+}
+
+export interface Group {
+  id: number;
+  name: string;
+  subCategories?: SubCategory[];
+  questions?: Question[]; // Keep for backward compatibility
 }
 
 export interface WrongAnswer {
@@ -23,6 +30,7 @@ export interface WrongAnswer {
 
 export interface QuizState {
   currentGroupId: number;
+  currentSubCategoryId: number; // ID of the selected sub-category (0 if none selected)
   currentQuestionIndex: number;
   correctAnswers: number;
   incorrectAnswers: number;

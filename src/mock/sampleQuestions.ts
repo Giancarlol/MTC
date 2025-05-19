@@ -5,7 +5,11 @@ export const mockGroups: Group[] = [
   {
     id: 1,
     name: 'Normas de Tránsito',
-    questions: [
+    subCategories: [
+      {
+        id: 101,
+        name: 'Normas de Tránsito I',
+        questions: [
       {
         id: 1,
         text: "Está permitido en la vía:",
@@ -2583,5 +2587,3 @@ export const mockGroups: Group[] = [
     ]
   }
 ];
-  
-

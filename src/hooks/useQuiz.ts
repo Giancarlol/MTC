@@ -1,10 +1,11 @@
 import { useState, useCallback, useEffect } from 'react';
-import { QuizState, Group } from '../types';
+import { QuizState, Group, SubCategory } from '../types';
 
 const STORAGE_KEY = 'mtc_quiz_state';
 
 const initialQuizState: QuizState = {
   currentGroupId: 1,
+  currentSubCategoryId: 0, // 0 means no sub-category selected
   currentQuestionIndex: 0,
   correctAnswers: 0,
   incorrectAnswers: 0,
@@ -64,7 +65,8 @@ export function useQuiz(groups: Group[]) {
         // If the saved group doesn't exist, reset to the first available group
         return {
           ...initialQuizState,
-          currentGroupId: safeGroups[0].id
+          currentGroupId: safeGroups[0].id,
+          currentSubCategoryId: 0
         };
       }
     }
@@ -77,30 +79,53 @@ export function useQuiz(groups: Group[]) {
   const currentGroup = safeGroups.length > 0 ?
     (safeGroups.find(group => group.id === quizState.currentGroupId) || safeGroups[0]) :
     undefined;
+    
+  // Determine if the current group has sub-categories
+  const hasSubCategories = currentGroup && 
+    Array.isArray(currentGroup.subCategories) && 
+    currentGroup.subCategories.length > 0;
+    
+  // Get the current sub-category if available
+  const currentSubCategory: SubCategory | undefined = hasSubCategories && currentGroup && currentGroup.subCategories ? 
+    (quizState.currentSubCategoryId > 0 ? 
+      currentGroup.subCategories.find(subCat => subCat.id === quizState.currentSubCategoryId) : 
+      currentGroup.subCategories[0]) : 
+    undefined;
+    
+  // Get the questions from either the sub-category or the main group
+  const currentQuestions = currentSubCategory ? 
+    currentSubCategory.questions : 
+    (currentGroup && currentGroup.questions ? currentGroup.questions : []);
   
-  // Initialize question order if it's empty or invalid
+  // Initialize question order if it's empty or invalid or if sub-category changes
   useEffect(() => {
-    if ((!quizState.questionOrder || quizState.questionOrder.length === 0) && currentGroup && currentGroup.questions) {
+    if ((!quizState.questionOrder || quizState.questionOrder.length === 0) && currentQuestions && currentQuestions.length > 0) {
       const randomizedOrder = shuffleArray(
-        currentGroup.questions.map((_q, idx) => idx)
+        currentQuestions.map((_q, idx) => idx)
       );
       setQuizState((prev: QuizState) => ({
         ...prev,
         questionOrder: randomizedOrder,
         // Reset current question index to ensure it's valid
-        currentQuestionIndex: 0
+        currentQuestionIndex: 0,
+        // Reset counters when changing sub-categories
+        correctAnswers: 0,
+        incorrectAnswers: 0,
+        answeredQuestions: {},
+        wrongAnswers: {},
+        isCompleted: false
       }));
     }
-  }, [currentGroup, quizState.questionOrder]);
+  }, [currentQuestions, quizState.currentSubCategoryId]);
   
   // Get current question using the randomized order - with additional safety checks
-  const currentQuestion = currentGroup && 
+  const currentQuestion = 
     quizState.questionOrder && 
     quizState.questionOrder.length > 0 && 
-    currentGroup.questions && 
+    currentQuestions && 
     quizState.currentQuestionIndex < quizState.questionOrder.length && 
-    quizState.questionOrder[quizState.currentQuestionIndex] < currentGroup.questions.length
-      ? currentGroup.questions[quizState.questionOrder[quizState.currentQuestionIndex]]
+    quizState.questionOrder[quizState.currentQuestionIndex] < currentQuestions.length
+      ? currentQuestions[quizState.questionOrder[quizState.currentQuestionIndex]]
       : undefined;
   
   // Save state whenever it changes
@@ -277,6 +302,7 @@ export function useQuiz(groups: Group[]) {
     setQuizState({
       ...initialQuizState,
       currentGroupId: groupExists ? groupId : defaultGroupId,
+      currentSubCategoryId: 0, // Reset sub-category selection
       questionOrder: [], // Reset question order to trigger randomization
       wrongAnswers: {}, // Reset wrong answers
       answeredQuestions: {}, // Reset answered questions
@@ -287,6 +313,36 @@ export function useQuiz(groups: Group[]) {
       lastUpdated: new Date().toISOString() // Update timestamp
     });
   }, [safeGroups]);
+  
+  // Add a function to select a sub-category
+  const selectSubCategory = useCallback((subCategoryId: number) => {
+    setShowFeedback(false);
+    setSelectedAnswerIndex(null);
+    
+    // Validate the sub-category exists in the current group
+    let validSubCategoryId = subCategoryId;
+    if (currentGroup && currentGroup.subCategories) {
+      const subCategoryExists = currentGroup.subCategories.some(subCat => subCat.id === subCategoryId);
+      if (!subCategoryExists && currentGroup.subCategories.length > 0) {
+        validSubCategoryId = currentGroup.subCategories[0].id;
+      }
+    } else {
+      validSubCategoryId = 0; // No sub-categories available
+    }
+    
+    setQuizState(prev => ({
+      ...prev,
+      currentSubCategoryId: validSubCategoryId,
+      questionOrder: [], // Reset question order to trigger randomization
+      wrongAnswers: {}, // Reset wrong answers
+      answeredQuestions: {}, // Reset answered questions
+      correctAnswers: 0, // Reset correct answers count
+      incorrectAnswers: 0, // Reset incorrect answers count
+      currentQuestionIndex: 0, // Ensure we start at the first question
+      isCompleted: false, // Reset completion status
+      lastUpdated: new Date().toISOString() // Update timestamp
+    }));
+  }, [currentGroup]);
   
   // Clear saved state and reset quiz
   const resetQuiz = useCallback(() => {
@@ -308,6 +364,8 @@ export function useQuiz(groups: Group[]) {
   return {
     quizState,
     currentGroup,
+    currentSubCategory,
+    hasSubCategories,
     currentQuestion,
     selectedAnswerIndex,
     showFeedback,
@@ -315,6 +373,7 @@ export function useQuiz(groups: Group[]) {
     nextQuestion,
     previousQuestion,
     selectGroup,
+    selectSubCategory,
     resetQuiz,
     clearSavedProgress,
     isGroupCompleted,

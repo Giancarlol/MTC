@@ -4,6 +4,7 @@ import { Group } from '../types';
 import QuestionCard from './QuestionCard';
 import ResultTracker from './ResultTracker';
 import GroupSelector from './GroupSelector';
+import SubCategorySelector from './SubCategorySelector';
 import SavedProgressBanner from './SavedProgressBanner';
 import QuizSummary from './QuizSummary';
 import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
@@ -73,6 +74,8 @@ const QuizApp: React.FC<QuizAppProps> = ({ groups }) => {
   const {
     quizState,
     currentGroup,
+    currentSubCategory,
+    hasSubCategories,
     currentQuestion,
     selectedAnswerIndex,
     showFeedback,
@@ -80,6 +83,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ groups }) => {
     nextQuestion,
     previousQuestion,
     selectGroup,
+    selectSubCategory,
     resetQuiz,
     clearSavedProgress,
     isGroupCompleted,
@@ -204,11 +208,23 @@ const QuizApp: React.FC<QuizAppProps> = ({ groups }) => {
           </div>
         </div>
         
+        {/* Show sub-category selector if the current group has sub-categories */}
+        {hasSubCategories && currentGroup && currentGroup.subCategories && (
+          <div className="mb-6">
+            <SubCategorySelector
+              subCategories={currentGroup.subCategories}
+              currentSubCategoryId={quizState.currentSubCategoryId}
+              onSelectSubCategory={selectSubCategory}
+            />
+          </div>
+        )}
+        
         {showSummary ? (
           /* Show summary when the group is completed */
           <QuizSummary 
             wrongAnswers={getWrongAnswers()}
-            totalQuestions={currentGroup.questions.length}
+            totalQuestions={currentSubCategory ? currentSubCategory.questions.length : 
+                           (currentGroup?.questions?.length || 0)}
             correctAnswers={quizState.correctAnswers}
             onReset={handleResetGroup}
             onSelectNewGroup={handleSelectNewGroup}
