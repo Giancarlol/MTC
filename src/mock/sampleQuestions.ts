@@ -1082,942 +1082,952 @@ export const mockGroups: Group[] = [
     questions: [
       {
         id: 3,
-        text: "La línea blanca continua pintada en el pavimento indica:",
+        text: "La señal vertical reglamentaria R-6 [Prohibido voltear a la izquierda], significa que:",
         alternatives: [
-          { text: "Que está permitido el adelantamiento para los vehículos que transitan en cualquier sentido", isCorrect: false },
-          { text: "Que está prohibido el adelantamiento para los vehículos que transitan en cualquier sentido", isCorrect: true },
-          { text: "Que está permitido el adelantamiento solo para los vehículos que transitan en un sentido", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Está prohibido voltear a la izquierda y, por lo tanto, también está prohibido el giro en U.", isCorrect: true },
+          { text: "Está prohibido voltear a la izquierda, sin embargo, está permitido el giro en U.", isCorrect: false },
+          { text: "El único sentido de desplazamiento es continuar de frente.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 4,
-        text: "La línea amarilla continua pintada en el pavimento indica:",
+        text: "La señal vertical reglamentaria R-3 significa que:",
         alternatives: [
-          { text: "Que está permitido el adelantamiento para los vehículos que transitan en cualquier sentido", isCorrect: false },
-          { text: "Que está prohibido el adelantamiento para los vehículos que transitan en cualquier sentido", isCorrect: true },
-          { text: "Que está permitido el adelantamiento solo para los vehículos que transitan en un sentido", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Nos acercamos a una zona restringida al tránsito.", isCorrect: false },
+          { text: "Está permitido adelantar vehículos.", isCorrect: false },
+          { text: "El único sentido de desplazamiento es continuar de frente.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 5,
-        text: "La línea amarilla discontinua pintada en el pavimento indica:",
+        text: "En las vías, las marcas en el pavimento que son del tipo central discontinua y de color amarillo significan que:",
         alternatives: [
-          { text: "Que está permitido el adelantamiento para los vehículos que transitan en cualquier sentido, siempre que se pueda realizar con seguridad", isCorrect: true },
-          { text: "Que está prohibido el adelantamiento para los vehículos que transitan en cualquier sentido", isCorrect: false },
-          { text: "Que está permitido el adelantamiento solo para los vehículos que transitan en un sentido", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Está permitido hidar al otro carril para el adelantamiento vehicular, si es que es seguro hacerlo.", isCorrect: true },
+          { text: "No está permitido hidar al otro carril para el adelantamiento vehicular.", isCorrect: false },
+          { text: "Se está reduciendo el ancho de la calzada de la vía por donde se circula.", isCorrect: false },
+          { text: "Se está frente a un lugar de cruce peatonal.", isCorrect: false }
         ]
       },
       {
         id: 6,
-        text: "La línea blanca discontinua pintada en el pavimento indica:",
+        text: "El color ámbar o amarillo del semáforo significa que:",
         alternatives: [
-          { text: "Que está permitido el adelantamiento para los vehículos que transitan en cualquier sentido, siempre que se pueda realizar con seguridad", isCorrect: true },
-          { text: "Que está prohibido el adelantamiento para los vehículos que transitan en cualquier sentido", isCorrect: false },
-          { text: "Que está permitido el adelantamiento solo para los vehículos que transitan en un sentido", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Los vehículos deben avanzar.", isCorrect: false },
+          { text: "Los vehículos deben detenerse.", isCorrect: false },
+          { text: "Los vehículos deben acelerar la marcha.", isCorrect: false },
+          { text: "Los vehículos deben detenerse antes de ingresar a la intersección si su velocidad y ubicación lo permiten; de lo contrario, deberán cruzar y despejar la intersección.", isCorrect: true }
         ]
       },
       {
         id: 7,
-        text: "El símbolo de una flecha blanca recta pintada en el pavimento indica:",
+        text: "Los colores del semáforo tienen el siguiente significado: rojo: _____; ámbar o amarillo: _____; verde: _____:",
         alternatives: [
-          { text: "Que los vehículos deben girar a la derecha", isCorrect: false },
-          { text: "Que los vehículos deben girar a la izquierda", isCorrect: false },
-          { text: "Que los vehículos deben continuar en línea recta", isCorrect: true },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Detención - prevención - paso.", isCorrect: true },
+          { text: "Detención - paso con prevención - circulación rápida.", isCorrect: false },
+          { text: "Disminución de la velocidad - prevención - paso rápido.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 8,
-        text: "El símbolo de una flecha blanca con dirección a la derecha pintada en el pavimento indica:",
+        text: "¿Qué indica una flecha verde en un semáforo vehicular?",
         alternatives: [
-          { text: "Que los vehículos deben girar a la derecha", isCorrect: true },
-          { text: "Que los vehículos deben girar a la izquierda", isCorrect: false },
-          { text: "Que los vehículos deben continuar en línea recta", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Se puede continuar con precaución únicamente en la dirección de la flecha y desde el carril que esta flecha controla.", isCorrect: true },
+          { text: "No está permitida la circulación en el sentido que indica la flecha.", isCorrect: false },
+          { text: "Se debe respetar únicamente la luz circular.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 9,
-        text: "El símbolo de una flecha blanca con dirección a la izquierda pintada en el pavimento indica:",
+        text: "La siguiente señal vertical reglamentaria R-53:",
         alternatives: [
-          { text: "Que los vehículos deben girar a la derecha", isCorrect: false },
-          { text: "Que los vehículos deben girar a la izquierda", isCorrect: true },
-          { text: "Que los vehículos deben continuar en línea recta", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibe estacionar.", isCorrect: false },
+          { text: "Prohibe al conductor detener el vehículo dentro del área de la intersección.", isCorrect: true },
+          { text: "Prohibe la carga y descarga.", isCorrect: false },
+          { text: "Prohibe la circulación de vehículos motorizados.", isCorrect: false }
         ]
       },
       {
         id: 10,
-        text: "El símbolo de una flecha blanca recta y otra con dirección a la derecha pintada en el pavimento indica:",
+        text: "Si llega a una intersección y visualiza el semáforo con una flecha roja hacia la izquierda y la luz circular verde prendidas al mismo tiempo, la acción correcta es:",
         alternatives: [
-          { text: "Que los vehículos pueden girar a la derecha o continuar en línea recta", isCorrect: true },
-          { text: "Que los vehículos deben girar a la derecha", isCorrect: false },
-          { text: "Que los vehículos deben continuar en línea recta", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Avanzar en cualquier sentido, ya que teas a luz circular está en verde.", isCorrect: false },
+          { text: "Avanzar, pero el giro a la izquierda está prohibido por la flecha roja.", isCorrect: true },
+          { text: "Avanzar únicamente hacia la izquierda, pues continuar de frente está prohibido.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 11,
-        text: "El símbolo de una flecha blanca recta y otra con dirección a la izquierda pintada en el pavimento indica:",
+        text: "Si llega a una intersección donde el semáforo muestra una luz intermitente, qué afirmación es correcta:",
         alternatives: [
-          { text: "Que los vehículos pueden girar a la izquierda o continuar en línea recta", isCorrect: true },
-          { text: "Que los vehículos deben girar a la izquierda", isCorrect: false },
-          { text: "Que los vehículos deben continuar en línea recta", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Si la luz intermitente es roja, ésta es equivalente a un ¿CEDA EL PASO?.", isCorrect: true },
+          { text: "Si la luz intermitente es ámbar, tiene preferencia, debiendo reducir la velocidad y continuar con precaución.", isCorrect: false },
+          { text: "Si la luz intermitente es verde, ésta es equivalente a un 'PARE'.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 12,
-        text: "El símbolo de una flecha blanca con dirección a la derecha y otra con dirección a la izquierda pintada en el pavimento indica:",
+        text: "¿La luz intermitente roja es igual que una señal de PARE?",
         alternatives: [
-          { text: "Que los vehículos pueden girar a la derecha o a la izquierda", isCorrect: true },
-          { text: "Que los vehículos deben girar a la derecha", isCorrect: false },
-          { text: "Que los vehículos deben girar a la izquierda", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Verdad.", isCorrect: true },
+          { text: "Es verdad siempre y cuando también se encuentre un Policía de Tránsito indicando la señal de Pare.", isCorrect: false },
+          { text: "Falso.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 18,
-        text: "La señal de 'Pare' indica:",
+        text: "La siguiente señal vertical reglamentaria (R-29):",
         alternatives: [
-          { text: "Que los vehículos deben detenerse completamente en la intersección", isCorrect: true },
-          { text: "Que los vehículos deben reducir la velocidad y continuar con precaución", isCorrect: false },
-          { text: "Que los vehículos deben ceder el paso a los peatones únicamente", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibe el uso de la bocina en vías urbanas.", isCorrect: false },
+          { text: "Prohibe el uso de la bocina en carreteras.", isCorrect: false },
+          { text: "Prohibe el uso de la bocina.", isCorrect: true },
+          { text: "Prohibe hacer ruido.", isCorrect: false }
         ]
       },
       {
         id: 27,
-        text: "La señal de 'Ceda el Paso' indica:",
+        text: "¿Qué significa un triángulo rojo de seguridad colocado en la calzada?",
         alternatives: [
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que los vehículos deben reducir la velocidad y ceder el paso a otros vehículos o peatones si es necesario", isCorrect: true },
-          { text: "Que los vehículos tienen prioridad de paso", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "La presencia de un vehículo inmovilizado en la vía pública por alguna circunstancia.", isCorrect: true },
+          { text: "Zona de obras por reparación en la calzada.", isCorrect: false },
+          { text: "Que el vehículo que lo enfrenta debe detenerse.", isCorrect: false },
+          { text: "a y c son correctas.", isCorrect: false }
         ]
       },
       {
         id: 28,
-        text: "La señal de 'Prohibido Estacionar' indica:",
+        text: "La siguiente señal vertical reglamentaria P-22C indica que:",
         alternatives: [
-          { text: "Que está permitido detenerse temporalmente, pero no estacionar", isCorrect: true },
-          { text: "Que está prohibido detenerse y estacionar", isCorrect: false },
-          { text: "Que está permitido estacionar por un máximo de 5 minutos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Está permitido adelantar.", isCorrect: false },
+          { text: "Se aproxima un carril adicional.", isCorrect: false },
+          { text: "Está permitido cambiar de carril.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 31,
-        text: "La señal de 'Prohibido Girar a la Izquierda' indica:",
+        text: "Si usted se aproxima a una señal de PARE colocada verticalmente o pintada en la vía, la acción correcta es:",
         alternatives: [
-          { text: "Que los vehículos no pueden girar a la izquierda en la intersección", isCorrect: true },
-          { text: "Que los vehículos deben girar a la izquierda", isCorrect: false },
-          { text: "Que los vehículos pueden girar a la izquierda solo si no hay tráfico", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Disminuir su velocidad y cederle el paso a los vehículos que circulan por la transversal.", isCorrect: false },
+          { text: "Disminuir su velocidad y pasar con cuidado.", isCorrect: false },
+          { text: "Sobre parar y pasar rápidamente.", isCorrect: false },
+          { text: "Parar por completo, ceder el paso a los usuarios que tengan preferencia y luego continuar con precaución.", isCorrect: true }
         ]
       },
       {
         id: 32,
-        text: "La señal de 'Prohibido Girar a la Derecha' indica:",
+        text: "¿Cuál es la diferencia entre las señales P-2A y P-1A?",
         alternatives: [
-          { text: "Que los vehículos no pueden girar a la derecha en la intersección", isCorrect: true },
-          { text: "Que los vehículos deben girar a la derecha", isCorrect: false },
-          { text: "Que los vehículos pueden girar a la derecha solo si no hay tráfico", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "No hay diferencia, se usan indistintamente.", isCorrect: false },
+          { text: "La señal P-2A se utiliza en situaciones de mayor riesgo.", isCorrect: false },
+          { text: "La señal P-1A advierte la presencia de curva pronunciada a la derecha mientras que la P-2A advierte la presencia de curva suave a la derecha.", isCorrect: false },
+          { text: "La señal P-2A advierte la presencia de curva pronunciada a la derecha mientras que la P-1A advierte la presencia de curva suave a la derecha.", isCorrect: true }
         ]
       },
       {
         id: 33,
-        text: "La señal de 'Prohibido Girar en U' indica:",
+        text: "¿Qué indica la señal R-30F?",
         alternatives: [
-          { text: "Que los vehículos no pueden realizar un giro en U para cambiar de dirección", isCorrect: true },
-          { text: "Que los vehículos deben realizar un giro en U", isCorrect: false },
-          { text: "Que los vehículos pueden realizar un giro en U solo si no hay tráfico", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Tener precaución con vehículos lentos.", isCorrect: false },
+          { text: "Regula la velocidad máxima permitida en curvas.", isCorrect: false },
+          { text: "Regula la velocidad máxima en zonas rurales.", isCorrect: true },
+          { text: "No se encuentra regulada en el reglamento.", isCorrect: false }
         ]
       },
       {
         id: 49,
-        text: "La señal de 'Zona Escolar' indica:",
+        text: "Se entiende por línea de parada a:",
         alternatives: [
-          { text: "Que los vehículos deben reducir la velocidad y estar atentos a la presencia de escolares", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "La línea transversal marcada en la calzada antes de la intersección, que indica al conductor el límite para detener el vehículo.", isCorrect: true },
+          { text: "Las líneas que se encuentran en los lugares del estacionamiento.", isCorrect: false },
+          { text: "El lugar utilizado para embarcar y desembarcar pasajeros.", isCorrect: false },
+          { text: "Todas las alternativas son correctas.", isCorrect: false }
         ]
       },
       {
         id: 50,
-        text: "La señal de 'Cruce Peatonal' indica:",
+        text: "La siguiente señal vertical reglamentaria P-17A, indica:",
         alternatives: [
-          { text: "Que los vehículos deben ceder el paso a los peatones que cruzan la vía", isCorrect: true },
-          { text: "Que los vehículos tienen prioridad sobre los peatones", isCorrect: false },
-          { text: "Que está prohibido el paso de peatones", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Reducción de la calzada al lado derecho.", isCorrect: false },
+          { text: "Reducción de la calzada al lado izquierdo.", isCorrect: false },
+          { text: "Reducción de la calzada en ambos lados.", isCorrect: true },
+          { text: "Ensanchamiento de la calzada en ambos lados.", isCorrect: false }
         ]
       },
       {
         id: 51,
-        text: "La señal de 'Prohibido el Paso' indica:",
+        text: "En caso de encontrar marcación de doble línea amarilla compuesta por un trazo continuo y otro trazo discontinuo en una vía de doble sentido, ¿qué se debe hacer?",
         alternatives: [
-          { text: "Que está prohibido el acceso de vehículos a la vía", isCorrect: true },
-          { text: "Que los vehículos deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Se puede adelantar en ambos sentidos.", isCorrect: false },
+          { text: "No está permitido adelantar en ningún sentido.", isCorrect: false },
+          { text: "Respetar la línea que está de su lado (si es continua, no adelantar; si es discontinua, está permitido adelantar).", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 52,
-        text: "La señal de 'Velocidad Máxima' indica:",
+        text: "Se define como zona rígida al:",
         alternatives: [
-          { text: "El límite máximo de velocidad permitido en la vía", isCorrect: true },
-          { text: "El límite mínimo de velocidad permitido en la vía", isCorrect: false },
-          { text: "Que los vehículos deben mantener una velocidad constante", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Área donde se prohíbe la circulación de vehículos.", isCorrect: false },
+          { text: "Área donde se prohíbe la circulación de peatones.", isCorrect: false },
+          { text: "Área de la vía en la que se prohíbe el estacionamiento de vehículos.", isCorrect: true },
+          { text: "Todas las alternativas son correctas.", isCorrect: false }
         ]
       },
       {
         id: 67,
-        text: "La señal de 'Curva Peligrosa' indica:",
+        text: "La señal preventiva P-33A, significa:",
         alternatives: [
-          { text: "Que los vehículos deben reducir la velocidad y conducir con precaución debido a una curva pronunciada", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que los vehículos pueden aumentar la velocidad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Señal de curva sinuosa.", isCorrect: false },
+          { text: "Señal de proximidad a un badén.", isCorrect: false },
+          { text: "Señal de proximidad de un reductor de velocidad tipo resalto.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 72,
-        text: "La señal de 'Cruce de Ferrocarril' indica:",
+        text: "En señalética vial, el color ____ en el pavimento es utilizado para carriles de tráfico en sentido opuesto y el color ____ en el pavimento es utilizado como separador de carriles de tráfico en el mismo sentido.",
         alternatives: [
-          { text: "Que los vehículos deben estar atentos a la posible presencia de un tren y detenerse si es necesario", isCorrect: true },
-          { text: "Que los vehículos tienen prioridad sobre el tren", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Amarillo - blanco.", isCorrect: true },
+          { text: "Blanco - Amarillo.", isCorrect: false },
+          { text: "Azul - rojo.", isCorrect: false },
+          { text: "Rojo - Amarillo.", isCorrect: false }
         ]
       },
       {
         id: 75,
-        text: "La señal de 'Prohibido Adelantar' indica:",
+        text: "Tienen el objetivo de notificar a los usuarios las limitaciones, prohibiciones o restricciones en el uso de la vía.",
         alternatives: [
-          { text: "Que está prohibido adelantar a otros vehículos en la vía", isCorrect: true },
-          { text: "Que los vehículos deben adelantar con precaución", isCorrect: false },
-          { text: "Que los vehículos pueden adelantar solo a la derecha", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Señales reguladoras o de reglamentación.", isCorrect: true },
+          { text: "Señales preventivas.", isCorrect: false },
+          { text: "Señales informativas.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 76,
-        text: "La señal de 'Estrechamiento de la Vía' indica:",
+        text: "Tienen el propósito de advertir a los usuarios sobre la existencia y naturaleza de un peligro en la vía.",
         alternatives: [
-          { text: "Que la vía se reduce en ancho, por lo que los vehículos deben conducir con precaución", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Señales reguladoras o de reglamentación.", isCorrect: false },
+          { text: "Señales preventivas.", isCorrect: true },
+          { text: "Señales informativas.", isCorrect: false },
+          { text: "Señales horizontales.", isCorrect: false }
         ]
       },
       {
         id: 84,
-        text: "La señal de 'Límite de Altura' indica:",
+        text: "Una línea blanca continua en el sentido longitudinal de una vía, que se coloca en el pavimento, le indica al conductor:",
         alternatives: [
-          { text: "La altura máxima permitida para los vehículos que transitan por la vía", isCorrect: true },
-          { text: "La altura mínima permitida para los vehículos", isCorrect: false },
-          { text: "Que los vehículos deben reducir la velocidad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Que se puede adelantar, debido a que la línea no es amarilla continua.", isCorrect: false },
+          { text: "Que está prohibido hidar la línea y no hay excepciones.", isCorrect: false },
+          { text: "Que está prohibido pasar al otro lado de la línea con algunas excepciones.", isCorrect: true },
+          { text: "Que es zona de peatones.", isCorrect: false }
         ]
       },
       {
         id: 87,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos Pesados' indica:",
+        text: "La siguiente señal (P-1), indica:",
         alternatives: [
-          { text: "Que los vehículos pesados no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos pesados deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos pesados tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una intersección con una vía no pavimentada.", isCorrect: false },
+          { text: "Proximidad a una intersección con una vía de mayor jerarquía.", isCorrect: true },
+          { text: "Proximidad a una intersección sin preferencia de vía.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 88,
-        text: "La señal de 'Zona de Estacionamiento Permitido' indica:",
+        text: "La siguiente señal (P-2), indica:",
         alternatives: [
-          { text: "Que los vehículos pueden estacionar en la zona señalizada", isCorrect: true },
-          { text: "Que los vehículos deben detenerse temporalmente", isCorrect: false },
-          { text: "Que está prohibido estacionar en la zona señalizada", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una intersección con una vía de menor jerarquía.", isCorrect: true },
+          { text: "Proximidad a una intersección con una vía no pavimentada.", isCorrect: false },
+          { text: "Proximidad a una intersección sin preferencia de vía.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 89,
-        text: "La señal de 'Prohibido el Ingreso de Motocicletas' indica:",
+        text: "La siguiente señal (P-3), indica:",
         alternatives: [
-          { text: "Que las motocicletas no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que las motocicletas deben reducir la velocidad", isCorrect: false },
-          { text: "Que las motocicletas tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una intersección con una vía de menor jerarquía.", isCorrect: false },
+          { text: "Proximidad a una intersección con una vía no pavimentada.", isCorrect: false },
+          { text: "Proximidad a una intersección sin preferencia de vía.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 90,
-        text: "La señal de 'Prohibido el Ingreso de Bicicletas' indica:",
+        text: "La siguiente señal (P-4), indica:",
         alternatives: [
-          { text: "Que las bicicletas no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que las bicicletas deben reducir la velocidad", isCorrect: false },
-          { text: "Que las bicicletas tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una intersección con una vía de menor jerarquía.", isCorrect: false },
+          { text: "Proximidad a una intersección con una vía no pavimentada.", isCorrect: true },
+          { text: "Proximidad a una intersección sin preferencia de vía.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 91,
-        text: "La señal de 'Prohibido el Ingreso de Peatones' indica:",
+        text: "La siguiente señal (P-5), indica:",
         alternatives: [
-          { text: "Que los peatones no pueden transitar por la vía", isCorrect: true },
-          { text: "Que los peatones deben cruzar con precaución", isCorrect: false },
-          { text: "Que los peatones tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una intersección con una vía de menor jerarquía.", isCorrect: false },
+          { text: "Proximidad a una intersección con una vía no pavimentada.", isCorrect: false },
+          { text: "Proximidad a una intersección con circulación giratoria (rotonda).", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 92,
-        text: "La señal de 'Fin de Prohibición' indica:",
+        text: "La siguiente señal (P-6), indica:",
         alternatives: [
-          { text: "Que termina la restricción impuesta por una señal anterior", isCorrect: true },
-          { text: "Que comienza una nueva restricción", isCorrect: false },
-          { text: "Que los vehículos deben detenerse", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una intersección con una vía no pavimentada.", isCorrect: false },
+          { text: "Proximidad a una intersección con circulación giratoria (rotonda).", isCorrect: false },
+          { text: "Proximidad a un cruce a nivel con una línea férrea sin barreras.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 93,
-        text: "La señal de 'Cruce de Ciclistas' indica:",
+        text: "La siguiente señal (P-7), indica:",
         alternatives: [
-          { text: "Que los vehículos deben estar atentos a la posible presencia de ciclistas", isCorrect: true },
-          { text: "Que los ciclistas tienen prioridad sobre los vehículos", isCorrect: false },
-          { text: "Que está prohibido el paso de ciclistas", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una intersección con circulación giratoria (rotonda).", isCorrect: false },
+          { text: "Proximidad a un cruce a nivel con una línea férrea sin barreras.", isCorrect: false },
+          { text: "Proximidad a un cruce a nivel con una línea férrea con barreras.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 94,
-        text: "La señal de 'Cruce de Animales' indica:",
+        text: "La siguiente señal (P-8), indica:",
         alternatives: [
-          { text: "Que los vehículos deben estar atentos a la posible presencia de animales en la vía", isCorrect: true },
-          { text: "Que los animales tienen prioridad sobre los vehículos", isCorrect: false },
-          { text: "Que está prohibido el paso de animales", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un cruce a nivel con una línea férrea sin barreras.", isCorrect: false },
+          { text: "Proximidad a un cruce a nivel con una línea férrea con barreras.", isCorrect: false },
+          { text: "Proximidad a un cruce con tranvía.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 95,
-        text: "La señal de 'Pendiente Pronunciada' indica:",
+        text: "La siguiente señal (P-9), indica:",
         alternatives: [
-          { text: "Que los vehículos deben conducir con precaución debido a una pendiente pronunciada", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un cruce a nivel con una línea férrea con barreras.", isCorrect: false },
+          { text: "Proximidad a un cruce con tranvía.", isCorrect: false },
+          { text: "Proximidad a una intersección de caminos.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 96,
-        text: "La señal de 'Pavimento Deslizante' indica:",
+        text: "La siguiente señal (P-10), indica:",
         alternatives: [
-          { text: "Que los vehículos deben reducir la velocidad debido a la posibilidad de un pavimento resbaladizo", isCorrect: true },
-          { text: "Que los vehículos deben aumentar la velocidad", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un cruce con tranvía.", isCorrect: false },
+          { text: "Proximidad a una intersección de caminos.", isCorrect: false },
+          { text: "Proximidad a una bifurcación.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 97,
-        text: "La señal de 'Caída de Rocas' indica:",
+        text: "La siguiente señal (P-11), indica:",
         alternatives: [
-          { text: "Que los vehículos deben estar atentos a la posible caída de rocas en la vía", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una intersección de caminos.", isCorrect: false },
+          { text: "Proximidad a una bifurcación.", isCorrect: false },
+          { text: "Proximidad a un estrechamiento simétrico de la calzada.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 98,
-        text: "La señal de 'Viento Lateral' indica:",
+        text: "La siguiente señal (P-12), indica:",
         alternatives: [
-          { text: "Que los vehículos deben conducir con precaución debido a posibles vientos fuertes", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una bifurcación.", isCorrect: false },
+          { text: "Proximidad a un estrechamiento simétrico de la calzada.", isCorrect: false },
+          { text: "Proximidad a un estrechamiento asimétrico de la calzada por el lado derecho.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 99,
-        text: "La señal de 'Túnel' indica:",
+        text: "La siguiente señal (P-13), indica:",
         alternatives: [
-          { text: "Que los vehículos deben estar atentos al ingreso a un túnel y encender las luces", isCorrect: true },
-          { text: "Que los vehículos deben detenerse antes de entrar al túnel", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un estrechamiento simétrico de la calzada.", isCorrect: false },
+          { text: "Proximidad a un estrechamiento asimétrico de la calzada por el lado derecho.", isCorrect: false },
+          { text: "Proximidad a un estrechamiento asimétrico de la calzada por el lado izquierdo.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 100,
-        text: "La señal de 'Puente Estrecho' indica:",
+        text: "La siguiente señal (P-14), indica:",
         alternatives: [
-          { text: "Que los vehículos deben conducir con precaución debido a un puente de ancho reducido", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un estrechamiento asimétrico de la calzada por el lado derecho.", isCorrect: false },
+          { text: "Proximidad a un estrechamiento asimétrico de la calzada por el lado izquierdo.", isCorrect: false },
+          { text: "Proximidad a un puente angosto.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 101,
-        text: "La señal de 'Cruce de Caminos' indica:",
+        text: "La siguiente señal (P-15), indica:",
         alternatives: [
-          { text: "Que los vehículos deben estar atentos a la presencia de una intersección con otra vía", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un estrechamiento asimétrico de la calzada por el lado izquierdo.", isCorrect: false },
+          { text: "Proximidad a un puente angosto.", isCorrect: false },
+          { text: "Proximidad a un badén.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 102,
-        text: "La señal de 'Intersección en T' indica:",
+        text: "La siguiente señal (P-16), indica:",
         alternatives: [
-          { text: "Que la vía termina en una intersección en forma de T", isCorrect: true },
-          { text: "Que los vehículos deben girar a la izquierda", isCorrect: false },
-          { text: "Que los vehículos deben girar a la derecha", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un puente angosto.", isCorrect: false },
+          { text: "Proximidad a un badén.", isCorrect: false },
+          { text: "Proximidad a un paso a nivel.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 103,
-        text: "La señal de 'Intersección en Y' indica:",
+        text: "La siguiente señal (P-17), indica:",
         alternatives: [
-          { text: "Que la vía termina en una intersección en forma de Y", isCorrect: true },
-          { text: "Que los vehículos deben girar a la izquierda", isCorrect: false },
-          { text: "Que los vehículos deben girar a la derecha", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un badén.", isCorrect: false },
+          { text: "Proximidad a un paso a nivel.", isCorrect: false },
+          { text: "Proximidad a un túnel.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 104,
-        text: "La señal de 'Rotonda' indica:",
+        text: "La siguiente señal (P-18), indica:",
         alternatives: [
-          { text: "Que los vehículos deben estar atentos a la presencia de una rotonda y ceder el paso a los vehículos que circulan en ella", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que los vehículos tienen prioridad en la rotonda", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un paso a nivel.", isCorrect: false },
+          { text: "Proximidad a un túnel.", isCorrect: false },
+          { text: "Proximidad a un tramo de pavimento resbaladizo.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 105,
-        text: "La señal de 'Prohibido el Uso de Bocina' indica:",
+        text: "La siguiente señal (P-19), indica:",
         alternatives: [
-          { text: "Que los vehículos no pueden usar la bocina en la zona señalizada", isCorrect: true },
-          { text: "Que los vehículos deben usar la bocina para advertir su presencia", isCorrect: false },
-          { text: "Que los vehículos pueden usar la bocina solo en emergencias", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un túnel.", isCorrect: false },
+          { text: "Proximidad a un tramo de pavimento resbaladizo.", isCorrect: false },
+          { text: "Proximidad a un tramo con gravilla suelta.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 106,
-        text: "La señal de 'Zona de Obras' indica:",
+        text: "La siguiente señal (P-20), indica:",
         alternatives: [
-          { text: "Que los vehículos deben conducir con precaución debido a trabajos en la vía", isCorrect: true },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Que está prohibido el paso de vehículos", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un tramo de pavimento resbaladizo.", isCorrect: false },
+          { text: "Proximidad a un tramo con gravilla suelta.", isCorrect: false },
+          { text: "Proximidad a un peligro de desprendimiento de rocas.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 107,
-        text: "La señal de 'Límite de Peso' indica:",
+        text: "La siguiente señal (P-21), indica:",
         alternatives: [
-          { text: "El peso máximo permitido para los vehículos que transitan por la vía", isCorrect: true },
-          { text: "El peso mínimo permitido para los vehículos", isCorrect: false },
-          { text: "Que los vehículos deben reducir la velocidad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un tramo con gravilla suelta.", isCorrect: false },
+          { text: "Proximidad a un peligro de desprendimiento de rocas.", isCorrect: false },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 108,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos' indica:",
+        text: "La siguiente señal (P-22), indica:",
         alternatives: [
-          { text: "Que ningún vehículo puede ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos deben detenerse completamente", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un peligro de desprendimiento de rocas.", isCorrect: false },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Proximidad a un cruce de ciclistas.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 109,
-        text: "La señal de 'Prohibido el Ingreso de Autobuses' indica:",
+        text: "La siguiente señal (P-23), indica:",
         alternatives: [
-          { text: "Que los autobuses no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los autobuses deben reducir la velocidad", isCorrect: false },
-          { text: "Que los autobuses tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Proximidad a un cruce de ciclistas.", isCorrect: false },
+          { text: "Proximidad a una zona escolar.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 110,
-        text: "La señal de 'Prohibido el Ingreso de Camiones' indica:",
+        text: "La siguiente señal (P-24), indica:",
         alternatives: [
-          { text: "Que los camiones no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los camiones deben reducir la velocidad", isCorrect: false },
-          { text: "Que los camiones tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un cruce de ciclistas.", isCorrect: false },
+          { text: "Proximidad a una zona escolar.", isCorrect: false },
+          { text: "Proximidad a una zona de hospital.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 111,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos Agrícolas' indica:",
+        text: "La siguiente señal (P-25), indica:",
         alternatives: [
-          { text: "Que los vehículos agrícolas no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos agrícolas deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos agrícolas tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una zona escolar.", isCorrect: false },
+          { text: "Proximidad a una zona de hospital.", isCorrect: false },
+          { text: "Proximidad a un cruce de animales.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 112,
-        text: "La señal de 'Prohibido el Ingreso de Carretas' indica:",
+        text: "La siguiente señal (P-26), indica:",
         alternatives: [
-          { text: "Que las carretas no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que las carretas deben reducir la velocidad", isCorrect: false },
-          { text: "Que las carretas tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una zona de hospital.", isCorrect: false },
+          { text: "Proximidad a un cruce de animales.", isCorrect: false },
+          { text: "Proximidad a un cruce de animales domésticos.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 113,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Tracción Animal' indica:",
+        text: "La siguiente señal (P-27), indica:",
         alternatives: [
-          { text: "Que los vehículos de tracción animal no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de tracción animal deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de tracción animal tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un cruce de animales.", isCorrect: false },
+          { text: "Proximidad a un cruce de animales domésticos.", isCorrect: false },
+          { text: "Proximidad a un paso de maquinaria agrícola.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 114,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Carga Peligrosa' indica:",
+        text: "La siguiente señal (P-28), indica:",
         alternatives: [
-          { text: "Que los vehículos que transportan carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos que transportan carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos que transportan carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un cruce de animales domésticos.", isCorrect: false },
+          { text: "Proximidad a un paso de maquinaria agrícola.", isCorrect: false },
+          { text: "Proximidad a un paso de vehículos de tracción a sangre.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 115,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Pasajeros' indica:",
+        text: "La siguiente señal (P-29), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de pasajeros no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de pasajeros deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de pasajeros tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un paso de maquinaria agrícola.", isCorrect: false },
+          { text: "Proximidad a un paso de vehículos de tracción a sangre.", isCorrect: false },
+          { text: "Proximidad a un aeropuerto o zona de vuelo bajo.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 116,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Emergencia' indica:",
+        text: "La siguiente señal (P-30), indica:",
         alternatives: [
-          { text: "Que los vehículos de emergencia no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de emergencia deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de emergencia tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un paso de vehículos de tracción a sangre.", isCorrect: false },
+          { text: "Proximidad a un aeropuerto o zona de vuelo bajo.", isCorrect: false },
+          { text: "Proximidad a un lugar donde suelen soplar vientos fuertes.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 117,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos Militares' indica:",
+        text: "La siguiente señal (P-31), indica:",
         alternatives: [
-          { text: "Que los vehículos militares no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos militares deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos militares tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un aeropuerto o zona de vuelo bajo.", isCorrect: false },
+          { text: "Proximidad a un lugar donde suelen soplar vientos fuertes.", isCorrect: false },
+          { text: "Proximidad a una pendiente pronunciada.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 118,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte Escolar' indica:",
+        text: "La siguiente señal (P-32), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte escolar no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte escolar deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte escolar tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un lugar donde suelen soplar vientos fuertes.", isCorrect: false },
+          { text: "Proximidad a una pendiente pronunciada.", isCorrect: false },
+          { text: "Proximidad a una curva peligrosa.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 119,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Mercancías' indica:",
+        text: "La siguiente señal (P-33), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de mercancías no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de mercancías deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de mercancías tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una pendiente pronunciada.", isCorrect: false },
+          { text: "Proximidad a una curva peligrosa.", isCorrect: false },
+          { text: "Proximidad a una curva cerrada a la derecha.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 120,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Pasajeros y Mercancías' indica:",
+        text: "La siguiente señal (P-34), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de pasajeros y mercancías no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de pasajeros y mercancías deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de pasajeros y mercancías tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una curva peligrosa.", isCorrect: false },
+          { text: "Proximidad a una curva cerrada a la derecha.", isCorrect: false },
+          { text: "Proximidad a una curva cerrada a la izquierda.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 121,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Pesada' indica:",
+        text: "La siguiente señal (P-35), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga pesada no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga pesada deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga pesada tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una curva cerrada a la derecha.", isCorrect: false },
+          { text: "Proximidad a una curva cerrada a la izquierda.", isCorrect: false },
+          { text: "Proximidad a una serie de curvas peligrosas.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 122,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Ligera' indica:",
+        text: "La siguiente señal (P-36), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga ligera no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga ligera deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga ligera tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una curva cerrada a la izquierda.", isCorrect: false },
+          { text: "Proximidad a una serie de curvas peligrosas.", isCorrect: false },
+          { text: "Proximidad a un tramo con resaltos.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 123,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (P-37), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a una serie de curvas peligrosas.", isCorrect: false },
+          { text: "Proximidad a un tramo con resaltos.", isCorrect: false },
+          { text: "Proximidad a un cruce con otra vía del mismo nivel.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 124,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Refrigerada' indica:",
+        text: "La siguiente señal (P-38), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga refrigerada no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga refrigerada deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga refrigerada tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un tramo con resaltos.", isCorrect: false },
+          { text: "Proximidad a un cruce con otra vía del mismo nivel.", isCorrect: false },
+          { text: "Proximidad a un lugar donde hay niños jugando.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 125,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Sobredimensionada' indica:",
+        text: "La siguiente señal (P-39), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga sobredimensionada no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga sobredimensionada deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga sobredimensionada tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un cruce con otra vía del mismo nivel.", isCorrect: false },
+          { text: "Proximidad a un lugar donde hay niños jugando.", isCorrect: false },
+          { text: "Proximidad a un lugar donde hay personas trabajando en la vía.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 126,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Sobrepasada' indica:",
+        text: "La siguiente señal (P-40), indica:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga sobrepasada no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga sobrepasada deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga sobrepasada tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Proximidad a un lugar donde hay niños jugando.", isCorrect: false },
+          { text: "Proximidad a un lugar donde hay personas trabajando en la vía.", isCorrect: false },
+          { text: "Proximidad a un paso de ganado.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 127,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Sobresaliente' indica:",
+        text: "La siguiente señal (R-1), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga sobresaliente no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga sobresaliente deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga sobresaliente tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Advertencia de pare.", isCorrect: false },
+          { text: "Obligación de detenerse (pare).", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 128,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Tóxica' indica:",
+        text: "La siguiente señal (R-2), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga tóxica no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga tóxica deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga tóxica tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Obligación de detenerse (pare).", isCorrect: false },
+          { text: "Ceda el paso.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 129,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Explosiva' indica:",
+        text: "La siguiente señal (R-3), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga explosiva no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga explosiva deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga explosiva tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Ceda el paso.", isCorrect: false },
+          { text: "Prohibido el ingreso.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 130,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Inflamable' indica:",
+        text: "La siguiente señal (R-4), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga inflamable no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga inflamable deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga inflamable tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido el ingreso.", isCorrect: false },
+          { text: "Prohibido el ingreso a vehículos.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 131,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Radiactiva' indica:",
+        text: "La siguiente señal (R-5), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga radiactiva no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga radiactiva deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga radiactiva tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido el ingreso a vehículos.", isCorrect: false },
+          { text: "Prohibido el ingreso a vehículos de carga.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 132,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Corrosiva' indica:",
+        text: "La siguiente señal (R-6), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga corrosiva no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga corrosiva deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga corrosiva tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido el ingreso a vehículos de carga.", isCorrect: false },
+          { text: "Prohibido el ingreso a vehículos de tracción animal.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 133,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-7), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido el ingreso a vehículos de tracción animal.", isCorrect: false },
+          { text: "Prohibido el ingreso a peatones.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 134,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-8), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido el ingreso a peatones.", isCorrect: false },
+          { text: "Prohibido el ingreso a ciclistas.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 135,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-9), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido el ingreso a ciclistas.", isCorrect: false },
+          { text: "Prohibido girar a la derecha.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 136,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-10), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido girar a la derecha.", isCorrect: false },
+          { text: "Prohibido girar a la izquierda.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 137,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-11), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido girar a la izquierda.", isCorrect: false },
+          { text: "Prohibido girar en U.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 138,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-12), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido girar en U.", isCorrect: false },
+          { text: "Prohibido adelantar.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
+        ]
+      },
+      {
+        id: 138,
+        text: "La siguiente señal (R-12), se utiliza para indicar:",
+        alternatives: [
+          { text: "Prohibido girar en U.", isCorrect: false },
+          { text: "Prohibido adelantar.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 139,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-13), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido adelantar.", isCorrect: false },
+          { text: "Prohibido estacionar.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 140,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-14), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido estacionar.", isCorrect: false },
+          { text: "Prohibido detenerse.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 141,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-15), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido detenerse.", isCorrect: false },
+          { text: "Límite máximo de velocidad.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 142,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-16), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Límite máximo de velocidad.", isCorrect: false },
+          { text: "Fin de la restricción de velocidad.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 143,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-17), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Fin de la restricción de velocidad.", isCorrect: false },
+          { text: "Prohibido el uso de bocina.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 144,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-18), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Prohibido el uso de bocina.", isCorrect: false },
+          { text: "Fin de la prohibición de uso de bocina.", isCorrect: true },
+          { text: "Proximidad a un cruce de peatones.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 145,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (1-18), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Cercanía a una ferretería.", isCorrect: false },
+          { text: "Cercanía a un servicio mecánico.", isCorrect: false },
+          { text: "Cercanía a un grifo.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 146,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (1-19), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Cercanía a un servicio mecánico.", isCorrect: false },
+          { text: "Cercanía a una tienda.", isCorrect: false },
+          { text: "Cercanía a un grifo.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 147,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (1-20), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Cercanía a un servicio mecánico.", isCorrect: false },
+          { text: "Cercanía a una zona donde debe circular con cadenas en las llantas.", isCorrect: false },
+          { text: "Cercanía a un grifo.", isCorrect: false },
+          { text: "Cercanía a una llantería.", isCorrect: true }
         ]
       },
       {
         id: 148,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (R-16a), se utiliza para indicar:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Fin de la restricción de circulación de automotores.", isCorrect: false },
+          { text: "Fin de la restricción de prohibido adelantar.", isCorrect: true },
+          { text: "Fin de la restricción de circulación en doble sentido.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 151,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "La siguiente señal (P-61), muestra:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Flechas retroreflectivas que indican peligro.", isCorrect: false },
+          { text: "Delineadores de curva, que guían al conductor.", isCorrect: true },
+          { text: "Advertencia al conductor sobre la proximidad de un puente.", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 183,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "Es una línea transversal a la calzada, que indica al conductor que debe detener completamente el vehículo, no debiendo sobrepasar el inicio de la indicada línea:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Línea de carril.", isCorrect: false },
+          { text: "Línea de borde de calzada.", isCorrect: false },
+          { text: "Línea de pare.", isCorrect: true },
+          { text: "Todas las alternativas son correctas.", isCorrect: false }
         ]
       },
       {
         id: 192,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "Son señales que regulan el tránsito:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Las bocinas y las marcas en la calzada o señales horizontales.", isCorrect: false },
+          { text: "Las bocinas y las señales verticales.", isCorrect: false },
+          { text: "Las señales verticales, las marcas en la calzada o señales horizontales y las bocinas.", isCorrect: true },
+          { text: "Las señales verticales y las marcas en la calzada o señales horizontales.", isCorrect: false }
         ]
       },
       {
         id: 197,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "El siguiente gráfico muestra:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Señalización de tránsito vertical y horizontal en una zona escolar.", isCorrect: false },
+          { text: "Únicamente señalización de tránsito vertical en una zona escolar.", isCorrect: false },
+          { text: "Únicamente señalización de tránsito horizontal en una zona escolar.", isCorrect: true },
+          { text: "Ninguna de las alternativas es correcta.", isCorrect: false }
         ]
       },
       {
         id: 198,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "Las canalizadoras, tiene por función conformar las islas canalizadoras del tránsito automotor en una:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Islas canalizadoras - vía.", isCorrect: true },
+          { text: "Líneas - intersección.", isCorrect: false },
+          { text: "Vías - intersección.", isCorrect: false },
+          { text: "Todas las alternativas son correctas.", isCorrect: false }
         ]
       },
       {
         id: 199,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "Si al conducir en una intersección se encuentra con las siguientes marcas en el pavimento (malla ortogonal de color amarillo), significa:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "Que no puede detener el vehículo dentro del área de intersección.", isCorrect: true },
+          { text: "Que se están realizando trabajos de emergencia en el área demarcada.", isCorrect: false },
+          { text: "Que únicamente puede detener el vehículo dentro del área de intersección.", isCorrect: false },
+          { text: "Que es una isla de refugio peatonal.", isCorrect: false }
         ]
       },
       {
         id: 200,
-        text: "La señal de 'Prohibido el Ingreso de Vehículos de Transporte de Carga Peligrosa' indica:",
+        text: "De acuerdo al siguiente gráfico, es correcto afirmar que:",
         alternatives: [
-          { text: "Que los vehículos de transporte de carga peligrosa no pueden ingresar a la vía", isCorrect: true },
-          { text: "Que los vehículos de transporte de carga peligrosa deben reducir la velocidad", isCorrect: false },
-          { text: "Que los vehículos de transporte de carga peligrosa tienen prioridad", isCorrect: false },
-          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+          { text: "La zona que permite adelantar inicia con las líneas amarillas continuas.", isCorrect: false },
+          { text: "Los conductores pueden estacionarse al empezar las líneas continuas.", isCorrect: false },
+          { text: "La zona de no adelantar inicia con las líneas amarillas continuas.", isCorrect: true },
+          { text: "El conductor del camión puede estacionarse antes de empezar las líneas continuas.", isCorrect: false }
         ]
       }
     ]

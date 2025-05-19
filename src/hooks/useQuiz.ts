@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { QuizState, Group } from '../types';
+import { QuizState, Group, Question } from '../types';
 
 const STORAGE_KEY = 'mtc_quiz_state';
 
@@ -9,6 +9,9 @@ const initialQuizState: QuizState = {
   correctAnswers: 0,
   incorrectAnswers: 0,
   answeredQuestions: {},
+  wrongAnswers: {},  // Track wrong answers for summary
+  questionOrder: [],  // Track randomized question order
+  isCompleted: false, // Track if the current group is completed
   lastUpdated: new Date().toISOString(),
 };
 
@@ -38,6 +41,16 @@ const saveState = (state: QuizState) => {
   }
 };
 
+// Fisher-Yates shuffle algorithm to randomize questions
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export function useQuiz(groups: Group[]) {
   const [quizState, setQuizState] = useState<QuizState>(() => {
     const savedState = loadSavedState();
@@ -47,7 +60,24 @@ export function useQuiz(groups: Group[]) {
   const [showFeedback, setShowFeedback] = useState(false);
 
   const currentGroup = groups.find(group => group.id === quizState.currentGroupId) || groups[0];
-  const currentQuestion = currentGroup?.questions[quizState.currentQuestionIndex];
+  
+  // Initialize question order if it's empty
+  useEffect(() => {
+    if (quizState.questionOrder.length === 0 && currentGroup) {
+      const randomizedOrder = shuffleArray(
+        currentGroup.questions.map((_q, idx) => idx)
+      );
+      setQuizState((prev: QuizState) => ({
+        ...prev,
+        questionOrder: randomizedOrder
+      }));
+    }
+  }, [currentGroup, quizState.questionOrder.length]);
+  
+  // Get current question using the randomized order
+  const currentQuestion = currentGroup && quizState.questionOrder.length > 0 
+    ? currentGroup.questions[quizState.questionOrder[quizState.currentQuestionIndex]]
+    : undefined;
   
   // Save state whenever it changes
   useEffect(() => {
@@ -66,7 +96,49 @@ export function useQuiz(groups: Group[]) {
     }
   }, []);
 
+  // Add a state to track if we should move to the next question
+  const [shouldMoveNext, setShouldMoveNext] = useState(false);
+  
+  // Define nextQuestion function before using it in the effect
+  const nextQuestion = useCallback(() => {
+    if (!currentQuestion) return; // Guard against undefined currentQuestion
+    setShowFeedback(false);
+    setSelectedAnswerIndex(null);
+    
+    setQuizState((prev: QuizState) => {
+      // If we're at the last question, mark as completed
+      if (prev.currentQuestionIndex >= prev.questionOrder.length - 1) {
+        return {
+          ...prev,
+          isCompleted: true
+        };
+      }
+      
+      return {
+        ...prev,
+        currentQuestionIndex: prev.currentQuestionIndex + 1,
+      };
+    });
+  }, [currentQuestion, setQuizState, setShowFeedback, setSelectedAnswerIndex]);
+  
+  // Effect to handle automatic progression
+  useEffect(() => {
+    let timer: number;
+    
+    if (showFeedback && shouldMoveNext) {
+      timer = window.setTimeout(() => {
+        nextQuestion();
+        setShouldMoveNext(false);
+      }, 1500);
+    }
+    
+    return () => {
+      if (timer) window.clearTimeout(timer);
+    };
+  }, [showFeedback, shouldMoveNext, nextQuestion]);
+  
   const selectAnswer = useCallback((answerIndex: number) => {
+    if (!currentQuestion) return; // Guard against undefined currentQuestion
     if (showFeedback) return; // Prevent multiple selections while showing feedback
     
     setSelectedAnswerIndex(answerIndex);
@@ -75,38 +147,38 @@ export function useQuiz(groups: Group[]) {
     const isCorrect = currentQuestion.alternatives[answerIndex].isCorrect;
     
     // Update state with answer result
-    setQuizState((prev: QuizState) => ({
-      ...prev,
-      correctAnswers: isCorrect ? prev.correctAnswers + 1 : prev.correctAnswers,
-      incorrectAnswers: !isCorrect ? prev.incorrectAnswers + 1 : prev.incorrectAnswers,
-      answeredQuestions: {
-        ...prev.answeredQuestions,
-        [currentQuestion.id]: isCorrect,
-      },
-    }));
-    
-    // Move to next question after delay
-    setTimeout(() => {
-      nextQuestion();
-    }, 1500);
-  }, [currentQuestion, showFeedback]);
-  
-  const nextQuestion = useCallback(() => {
-    setShowFeedback(false);
-    setSelectedAnswerIndex(null);
-    
     setQuizState((prev: QuizState) => {
-      // If we're at the last question, keep the index as is
-      if (prev.currentQuestionIndex >= currentGroup.questions.length - 1) {
-        return prev;
+      const updatedState = {
+        ...prev,
+        correctAnswers: isCorrect ? prev.correctAnswers + 1 : prev.correctAnswers,
+        incorrectAnswers: !isCorrect ? prev.incorrectAnswers + 1 : prev.incorrectAnswers,
+        answeredQuestions: {
+          ...prev.answeredQuestions,
+          [currentQuestion.id]: isCorrect,
+        },
+      };
+      
+      // If answer is wrong, store the question and the correct answer for summary
+      if (!isCorrect) {
+        const correctAlternative = currentQuestion.alternatives.find(alt => alt.isCorrect);
+        updatedState.wrongAnswers = {
+          ...prev.wrongAnswers,
+          [currentQuestion.id]: {
+            question: currentQuestion.text,
+            userAnswer: currentQuestion.alternatives[answerIndex].text,
+            correctAnswer: correctAlternative ? correctAlternative.text : '',
+          }
+        };
       }
       
-      return {
-        ...prev,
-        currentQuestionIndex: prev.currentQuestionIndex + 1,
-      };
+      return updatedState;
     });
-  }, [currentGroup]);
+    
+    // Set flag to move to next question after showing feedback
+    setShouldMoveNext(true);
+  }, [currentQuestion, showFeedback]);
+  
+  // This is a duplicate function declaration and has been removed
   
   const previousQuestion = useCallback(() => {
     setShowFeedback(false);
@@ -125,6 +197,18 @@ export function useQuiz(groups: Group[]) {
     });
   }, []);
   
+  // Check if all questions in the current group have been answered
+  const isGroupCompleted = useCallback(() => {
+    if (!currentGroup) return false;
+    return quizState.isCompleted || 
+           quizState.currentQuestionIndex >= quizState.questionOrder.length - 1;
+  }, [currentGroup, quizState.currentQuestionIndex, quizState.questionOrder.length, quizState.isCompleted]);
+
+  // Get wrong answers for summary
+  const getWrongAnswers = useCallback(() => {
+    return Object.values(quizState.wrongAnswers);
+  }, [quizState.wrongAnswers]);
+
   const selectGroup = useCallback((groupId: number) => {
     setShowFeedback(false);
     setSelectedAnswerIndex(null);
@@ -132,6 +216,7 @@ export function useQuiz(groups: Group[]) {
     setQuizState({
       ...initialQuizState,
       currentGroupId: groupId,
+      questionOrder: [], // Reset question order to trigger randomization
     });
   }, []);
   
@@ -154,5 +239,7 @@ export function useQuiz(groups: Group[]) {
     selectGroup,
     resetQuiz,
     clearSavedProgress,
+    isGroupCompleted,
+    getWrongAnswers,
   };
 }
