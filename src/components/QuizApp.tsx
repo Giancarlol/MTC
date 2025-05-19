@@ -13,8 +13,63 @@ interface QuizAppProps {
 }
 
 const QuizApp: React.FC<QuizAppProps> = ({ groups }) => {
+  // Add error state to track any issues
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  
+  // Validate groups before using them
+  useEffect(() => {
+    try {
+      if (!Array.isArray(groups)) {
+        throw new Error('Invalid groups data: not an array');
+      }
+      
+      if (groups.length === 0) {
+        throw new Error('No quiz groups available');
+      }
+      
+      // Validate the structure of at least the first group
+      const firstGroup = groups[0];
+      if (!firstGroup || typeof firstGroup.id !== 'number' || !Array.isArray(firstGroup.questions)) {
+        throw new Error('Invalid group structure');
+      }
+      
+      setIsLoading(false);
+    } catch (err) {
+      console.error('Error in QuizApp:', err);
+      setError(err instanceof Error ? err.message : 'An unknown error occurred');
+      setIsLoading(false);
+    }
+  }, [groups]);
+  
   // State to track if we're showing the saved progress banner
   const [showSavedProgress, setShowSavedProgress] = useState(true);
+  
+  // Wrap the useQuiz hook in a try-catch to prevent crashes
+  let quizHookResult;
+  try {
+    quizHookResult = useQuiz(groups);
+  } catch (err) {
+    console.error('Error in useQuiz hook:', err);
+    setError(err instanceof Error ? err.message : 'An error occurred in the quiz logic');
+    // Provide fallback values
+    quizHookResult = {
+      quizState: { currentGroupId: 1, currentQuestionIndex: 0, correctAnswers: 0, incorrectAnswers: 0, answeredQuestions: {}, wrongAnswers: {}, questionOrder: [], isCompleted: false, lastUpdated: '' },
+      currentGroup: null,
+      currentQuestion: null,
+      selectedAnswerIndex: null,
+      showFeedback: false,
+      selectAnswer: () => {},
+      nextQuestion: () => {},
+      previousQuestion: () => {},
+      selectGroup: () => {},
+      resetQuiz: () => {},
+      clearSavedProgress: () => {},
+      isGroupCompleted: () => false,
+      getWrongAnswers: () => [],
+    };
+  }
+  
   const {
     quizState,
     currentGroup,
@@ -29,7 +84,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ groups }) => {
     clearSavedProgress,
     isGroupCompleted,
     getWrongAnswers,
-  } = useQuiz(groups);
+  } = quizHookResult;
   
   // Check if there's saved progress to show
   useEffect(() => {
@@ -66,8 +121,55 @@ const QuizApp: React.FC<QuizAppProps> = ({ groups }) => {
     // The user will need to select a group manually
   };
   
-  if (!currentGroup) {
-    return <div className="text-center p-8">No questions available</div>;
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="text-xl font-semibold">Loading quiz data...</div>
+      </div>
+    );
+  }
+  
+  // Show error state
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+          <h2 className="text-2xl font-bold text-red-600 mb-4">Error</h2>
+          <p className="mb-4">{error}</p>
+          <button 
+            onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+          >
+            Clear Data & Refresh
+          </button>
+        </div>
+      </div>
+    );
+  }
+  
+  // Show message if no groups or current group is missing
+  if (!currentGroup || !Array.isArray(groups) || groups.length === 0) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full text-center">
+          <h2 className="text-2xl font-bold text-red-600 mb-4">No Questions Available</h2>
+          <p className="mb-4">Unable to load quiz questions. Please try refreshing the page.</p>
+          <button 
+            onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+          >
+            Clear Data & Refresh
+          </button>
+        </div>
+      </div>
+    );
   }
   
   return (
