@@ -2586,4 +2586,4 @@ export const mockGroups: Group[] = [
       }
     ]
   }
-];
+};
