@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QuizApp from './components/QuizApp';
 import { mockGroups } from './mock/sampleQuestions';
-import { mockGroupsWithSubCategories } from './mock/sampleQuestionsWithSubCategories';
 
 // Error boundary class component
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
@@ -94,7 +93,7 @@ function App() {
     <ErrorBoundary>
       <div className="min-h-screen bg-gray-100">
         {safeGroups.length > 0 ? (
-          <QuizApp groups={mockGroupsWithSubCategories} />
+          <QuizApp groups={safeGroups} />
         ) : (
           <div className="flex items-center justify-center h-screen">
             <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full text-center">
