@@ -21,4 +21,5 @@ export interface QuizState {
   correctAnswers: number;
   incorrectAnswers: number;
   answeredQuestions: Record<number, boolean>; // questionId -> wasCorrect
+  lastUpdated: string; // ISO date string of when the state was last updated
 }
