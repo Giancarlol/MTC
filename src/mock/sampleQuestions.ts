@@ -43,7 +43,7 @@ export const mockGroups: Group[] = [
           { text: "Se deben encender las luces direccionales primero, buscar una brecha y realizar el cambio de carril con precaución", isCorrect: true },
           { text: "Se debe encontrar una brecha, luego cambiar de carril con precaución; no es necesario el uso de luces direccionales para cambios de carril", isCorrect: false },
           { text: "Se debe advertir utilizando el claxon, identificar una brecha y realizar el cambio de carril con precaución", isCorrect: false },
-          { text: "Está prohibido el cambio de carril en vias de un solo snetido", isCorrect: false }
+          { text: "Está prohibido el cambio de carril en vias de un solo sentido", isCorrect: false }
         ]
       },
       {
@@ -541,9 +541,9 @@ export const mockGroups: Group[] = [
         text: "Ante un conductor con evidente discapacidad física, la cual no figura en el rubro de restricciones de su licencia de conducir, procede:",
         alternatives: [
           { text: "Que la Policía de Tránsito intervenga a dicho conductor y que la autoridad que expidió la licencia de conducir ordene su reexaminación", isCorrect: true },
-          { text: "Que la autoridad competente expida un closely...", isCorrect: false },
-          { text: "Que la Policía de Tránsito expida un closely...", isCorrect: false },
-          { text: "Que la Policía de Tránsito otorgue a dicho conductor un plazo prudencial para que cont...", isCorrect: false }
+          { text: "Que la autoridad competente expida un permiso excepcional para dicho conductor", isCorrect: false },
+          { text: "Que la Policía de Tránsito expida un permiso excepcional para dicho conductor", isCorrect: false },
+          { text: "Que la Policía de Tránsito otorgue a dicho conductor un plazo prudencial para que continue conduciendo", isCorrect: false }
         ]
       },
       {
@@ -672,8 +672,8 @@ export const mockGroups: Group[] = [
         alternatives: [
           { text: "Cambiar de luces bajas a luces altas", isCorrect: false },
           { text: "Encender las luces de emergencia", isCorrect: false },
-          { text: "Cambiar de luces altas a luces bajas", isCorrect: true },
-          { text: "[Option missing in the OCR data]", isCorrect: false }
+          { text: "Cambiar de luces altas a luces bajas", isCorrect: true }
+          
         ]
       },
       {
@@ -700,7 +700,7 @@ export const mockGroups: Group[] = [
         id: 171,
         text: "El conductor antes de iniciar la conducción de un vehículo no está obligado a:",
         alternatives: [
-          { text: "Portar la Buddhistación vehicular del vehículo que conduce", isCorrect: false },
+          { text: "Portar la tarjeta de identificacion vehicular del vehículo que conduce", isCorrect: false },
           { text: "Portar y exhibir la Placa Única de Rodaje", isCorrect: true },
           { text: "Constatar que el vehículo tiene SOAT vigente", isCorrect: false },
           { text: "Ninguna de las alternativas es correcta", isCorrect: false }
@@ -710,7 +710,7 @@ export const mockGroups: Group[] = [
         id: 172,
         text: "La faculta y autoriza la circulación del vehículo por la vía pública, identifica el bien, y, por ende, al titular responsable de las acciones que deriven de su propiedad.",
         alternatives: [
-          { text: "[Option missing in the OCR data]", isCorrect: false },
+          { text: "-", isCorrect: false },
           { text: "Municipalidad provincial", isCorrect: false },
           { text: "La Superintendencia Nacional de Aduanas y de Administración Tributaria - SUNAT", isCorrect: false },
           { text: "Placa Única Nacional de Rodaje", isCorrect: true }
@@ -733,7 +733,7 @@ export const mockGroups: Group[] = [
           { text: "Dispositivos de control del tránsito que tienen por finalidad regular y controlar el tránsito vehicular, motorizado y no motorizado, y el peatonal, a través de las indicaciones de las luces respectivas", isCorrect: true },
           { text: "Dispositivos de control del tránsito que tienen por finalidad regular y controlar únicamente el tránsito vehicular motorizado y peatonal, a través de las indicaciones de luces", isCorrect: false },
           { text: "Señales de color rojo, verde y amarillo, que tienen como único fin regular la corriente vehicular", isCorrect: false },
-          { text: "[Option missing in the OCR data]", isCorrect: false }
+          { text: "-", isCorrect: false }
         ]
       },
       {
@@ -2274,10 +2274,8 @@ export const mockGroups: Group[] = [
       }
     ]
   },
-  import { Group } from '../types';
+  
 
-// Real driving knowledge evaluation questions
-export const mockGroups: Group[] = [
   {
     id: 5,
     name: 'Mecánica Básica',
@@ -2351,7 +2349,229 @@ export const mockGroups: Group[] = [
           { text: "Solo cuando el vehículo está en movimiento", isCorrect: false },
           { text: "Ninguna de las alternativas es correcta", isCorrect: false }
         ]
+      },
+      {
+        id: 62,
+        text: "El sistema de escape de un vehículo está diseñado para:",
+        alternatives: [
+          { text: "Reducir el ruido y canalizar los gases de combustión", isCorrect: true },
+          { text: "Aumentar la velocidad del vehículo", isCorrect: false },
+          { text: "Controlar la dirección del vehículo", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+        ]
+      },
+      {
+        id: 63,
+        text: "El sistema de combustible de un vehículo está diseñado para:",
+        alternatives: [
+          { text: "Suministrar combustible al motor para su funcionamiento", isCorrect: true },
+          { text: "Reducir la temperatura del motor", isCorrect: false },
+          { text: "Mejorar la tracción de las llantas", isCorrect: false },
+          { text: "Ninguna de las alternativas es correcta", isCorrect: false }
+        ]
+      },
+      {
+        id: 1,
+        text: "Los frenos de tambor constan principalmente de:",
+        alternatives: [
+          { text: "Disco, pinza y pastillas de freno", isCorrect: false },
+          { text: "Tambor, zapatas y cilindro de rueda", isCorrect: true },
+          { text: "Rotor, cáliper y líquido de frenos", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 2,
+        text: "Los frenos de disco constan principalmente de:",
+        alternatives: [
+          { text: "Tambor, zapatas y cilindro de rueda", isCorrect: false },
+          { text: "Disco, pinza y pastillas de freno", isCorrect: true },
+          { text: "Cilindro maestro, tambor y zapatas", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 3,
+        text: "El sistema de frenos antibloqueo (ABS) tiene como función principal:",
+        alternatives: [
+          { text: "Aumentar la velocidad de frenado", isCorrect: false },
+          { text: "Evitar el bloqueo de las ruedas durante el frenado", isCorrect: true },
+          { text: "Reducir el consumo de combustible", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 4,
+        text: "El líquido de frenos debe ser revisado periódicamente porque:",
+        alternatives: [
+          { text: "Se evapora con el tiempo", isCorrect: false },
+          { text: "Absorbe humedad y pierde eficacia", isCorrect: true },
+          { text: "Cambia de color con el uso", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 5,
+        text: "La función principal del alternador en un vehículo es:",
+        alternatives: [
+          { text: "Encender el motor", isCorrect: false },
+          { text: "Generar electricidad para cargar la batería y alimentar sistemas eléctricos", isCorrect: true },
+          { text: "Regular la temperatura del motor", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 6,
+        text: "La batería de un vehículo tiene como función principal:",
+        alternatives: [
+          { text: "Alimentar el sistema de frenos", isCorrect: false },
+          { text: "Suministrar energía eléctrica para el arranque y sistemas eléctricos", isCorrect: true },
+          { text: "Controlar la suspensión del vehículo", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 7,
+        text: "El filtro de aire del motor debe revisarse periódicamente para:",
+        alternatives: [
+          { text: "Aumentar la potencia del motor", isCorrect: false },
+          { text: "Evitar la entrada de partículas que puedan dañar el motor", isCorrect: true },
+          { text: "Reducir el consumo de aceite", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 8,
+        text: "El sistema de encendido en un vehículo de combustión interna es responsable de:",
+        alternatives: [
+          { text: "Iniciar la combustión en el motor", isCorrect: true },
+          { text: "Controlar la dirección del vehículo", isCorrect: false },
+          { text: "Regular la presión de las llantas", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 9,
+        text: "La correa de distribución en un vehículo se encarga de:",
+        alternatives: [
+          { text: "Sincronizar el movimiento de las válvulas y los pistones", isCorrect: true },
+          { text: "Controlar la velocidad del vehículo", isCorrect: false },
+          { text: "Regular la presión de los frenos", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 10,
+        text: "Un neumático con presión baja puede causar:",
+        alternatives: [
+          { text: "Mayor consumo de combustible y desgaste irregular", isCorrect: true },
+          { text: "Mejor agarre en superficies mojadas", isCorrect: false },
+          { text: "Menor desgaste del neumático", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 11,
+        text: "El sistema de transmisión de un vehículo tiene como función principal:",
+        alternatives: [
+          { text: "Transferir la potencia del motor a las ruedas", isCorrect: true },
+          { text: "Controlar la temperatura del motor", isCorrect: false },
+          { text: "Regular la presión de los frenos", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 12,
+        text: "El embrague en un vehículo con transmisión manual permite:",
+        alternatives: [
+          { text: "Conectar y desconectar el motor de la transmisión", isCorrect: true },
+          { text: "Aumentar la velocidad del vehículo", isCorrect: false },
+          { text: "Controlar la dirección del vehículo", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 13,
+        text: "El diferencial en un vehículo permite:",
+        alternatives: [
+          { text: "Que las ruedas giren a diferentes velocidades al tomar curvas", isCorrect: true },
+          { text: "Aumentar la potencia del motor", isCorrect: false },
+          { text: "Controlar la suspensión del vehículo", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 14,
+        text: "El sistema de dirección asistida facilita:",
+        alternatives: [
+          { text: "El giro del volante con menos esfuerzo", isCorrect: true },
+          { text: "El frenado del vehículo", isCorrect: false },
+          { text: "El arranque del motor", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 15,
+        text: "El filtro de combustible tiene como función principal:",
+        alternatives: [
+          { text: "Eliminar impurezas del combustible antes de que llegue al motor", isCorrect: true },
+          { text: "Reducir el consumo de combustible", isCorrect: false },
+          { text: "Aumentar la potencia del motor", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 16,
+        text: "El sistema de refrigeración evita que el motor:",
+        alternatives: [
+          { text: "Se sobrecaliente durante su funcionamiento", isCorrect: true },
+          { text: "Pierda potencia en pendientes", isCorrect: false },
+          { text: "Consuma más combustible", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 68,
+        text: "¿Qué indica un nivel bajo de líquido de frenos en el depósito?",
+        alternatives: [
+          { text: "Fuga en el sistema o desgaste de las pastillas de freno", isCorrect: true },
+          { text: "Exceso de presión en el sistema de frenos", isCorrect: false },
+          { text: "Fallo en el sistema de suspensión", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 69,
+        text: "¿Qué puede indicar un chirrido al frenar?",
+        alternatives: [
+          { text: "Desgaste de las pastillas o zapatas de freno", isCorrect: true },
+          { text: "Fallo en el sistema de dirección", isCorrect: false },
+          { text: "Problema en el sistema de combustible", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 70,
+        text: "¿Qué debe hacerse si el motor se sobrecalienta?",
+        alternatives: [
+          { text: "Detener el vehículo y esperar a que el motor se enfríe", isCorrect: true },
+          { text: "Aumentar la velocidad para enfriar el motor", isCorrect: false },
+          { text: "Encender el aire acondicionado", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
+      },
+      {
+        id: 71,
+        text: "El mantenimiento preventivo de un vehículo incluye:",
+        alternatives: [
+          { text: "Revisión periódica de frenos, aceite, llantas y filtros", isCorrect: true },
+          { text: "Solo cambio de aceite cada 10 años", isCorrect: false },
+          { text: "Revisión únicamente cuando el vehículo falla", isCorrect: false },
+          { text: "Ninguna de las anteriores", isCorrect: false }
+        ]
       }
     ]
   }
 ];
+  
+
