@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { QuizState, Group, Question } from '../types';
+import { QuizState, Group } from '../types';
 
 const STORAGE_KEY = 'mtc_quiz_state';
 
@@ -61,23 +61,30 @@ export function useQuiz(groups: Group[]) {
 
   const currentGroup = groups.find(group => group.id === quizState.currentGroupId) || groups[0];
   
-  // Initialize question order if it's empty
+  // Initialize question order if it's empty or invalid
   useEffect(() => {
-    if (quizState.questionOrder.length === 0 && currentGroup) {
+    if ((!quizState.questionOrder || quizState.questionOrder.length === 0) && currentGroup && currentGroup.questions) {
       const randomizedOrder = shuffleArray(
         currentGroup.questions.map((_q, idx) => idx)
       );
       setQuizState((prev: QuizState) => ({
         ...prev,
-        questionOrder: randomizedOrder
+        questionOrder: randomizedOrder,
+        // Reset current question index to ensure it's valid
+        currentQuestionIndex: 0
       }));
     }
-  }, [currentGroup, quizState.questionOrder.length]);
+  }, [currentGroup, quizState.questionOrder]);
   
-  // Get current question using the randomized order
-  const currentQuestion = currentGroup && quizState.questionOrder.length > 0 
-    ? currentGroup.questions[quizState.questionOrder[quizState.currentQuestionIndex]]
-    : undefined;
+  // Get current question using the randomized order - with additional safety checks
+  const currentQuestion = currentGroup && 
+    quizState.questionOrder && 
+    quizState.questionOrder.length > 0 && 
+    currentGroup.questions && 
+    quizState.currentQuestionIndex < quizState.questionOrder.length && 
+    quizState.questionOrder[quizState.currentQuestionIndex] < currentGroup.questions.length
+      ? currentGroup.questions[quizState.questionOrder[quizState.currentQuestionIndex]]
+      : undefined;
   
   // Save state whenever it changes
   useEffect(() => {
@@ -213,12 +220,15 @@ export function useQuiz(groups: Group[]) {
     setShowFeedback(false);
     setSelectedAnswerIndex(null);
     
+    // Find the group to make sure it exists
+    const groupExists = groups.some(group => group.id === groupId);
+    
     setQuizState({
       ...initialQuizState,
-      currentGroupId: groupId,
+      currentGroupId: groupExists ? groupId : (groups[0]?.id || 1),
       questionOrder: [], // Reset question order to trigger randomization
     });
-  }, []);
+  }, [groups]);
   
   // Clear saved state and reset quiz
   const resetQuiz = useCallback(() => {
