@@ -52,14 +52,31 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function useQuiz(groups: Group[]) {
+  // Ensure groups is always an array
+  const safeGroups = Array.isArray(groups) ? groups : [];
+  
   const [quizState, setQuizState] = useState<QuizState>(() => {
     const savedState = loadSavedState();
+    // If we have a saved state, validate that the group still exists
+    if (savedState && savedState.currentGroupId) {
+      const groupExists = safeGroups.some(group => group.id === savedState.currentGroupId);
+      if (!groupExists && safeGroups.length > 0) {
+        // If the saved group doesn't exist, reset to the first available group
+        return {
+          ...initialQuizState,
+          currentGroupId: safeGroups[0].id
+        };
+      }
+    }
     return savedState || initialQuizState;
   });
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
 
-  const currentGroup = groups.find(group => group.id === quizState.currentGroupId) || groups[0];
+  // Safely find the current group or default to the first group if available
+  const currentGroup = safeGroups.length > 0 ?
+    (safeGroups.find(group => group.id === quizState.currentGroupId) || safeGroups[0]) :
+    undefined;
   
   // Initialize question order if it's empty or invalid
   useEffect(() => {
@@ -108,11 +125,27 @@ export function useQuiz(groups: Group[]) {
   
   // Define nextQuestion function before using it in the effect
   const nextQuestion = useCallback(() => {
+    // Enhanced guards against undefined values
     if (!currentQuestion) return; // Guard against undefined currentQuestion
+    if (!quizState.questionOrder) return; // Guard against undefined questionOrder
+    
     setShowFeedback(false);
     setSelectedAnswerIndex(null);
     
     setQuizState((prev: QuizState) => {
+      // Ensure prev is valid
+      if (!prev) return initialQuizState;
+      
+      // Ensure questionOrder exists
+      if (!prev.questionOrder || !Array.isArray(prev.questionOrder)) {
+        return {
+          ...prev,
+          questionOrder: [],
+          currentQuestionIndex: 0,
+          isCompleted: false
+        };
+      }
+      
       // If we're at the last question, mark as completed
       if (prev.currentQuestionIndex >= prev.questionOrder.length - 1) {
         return {
@@ -126,7 +159,7 @@ export function useQuiz(groups: Group[]) {
         currentQuestionIndex: prev.currentQuestionIndex + 1,
       };
     });
-  }, [currentQuestion, setQuizState, setShowFeedback, setSelectedAnswerIndex]);
+  }, [currentQuestion, quizState.questionOrder, setQuizState, setShowFeedback, setSelectedAnswerIndex]);
   
   // Effect to handle automatic progression
   useEffect(() => {
@@ -145,35 +178,45 @@ export function useQuiz(groups: Group[]) {
   }, [showFeedback, shouldMoveNext, nextQuestion]);
   
   const selectAnswer = useCallback((answerIndex: number) => {
+    // Enhanced guards against undefined values
     if (!currentQuestion) return; // Guard against undefined currentQuestion
     if (showFeedback) return; // Prevent multiple selections while showing feedback
+    if (!Array.isArray(currentQuestion.alternatives)) return; // Guard against missing alternatives
+    if (answerIndex < 0 || answerIndex >= currentQuestion.alternatives.length) return; // Guard against invalid index
     
     setSelectedAnswerIndex(answerIndex);
     setShowFeedback(true);
     
-    const isCorrect = currentQuestion.alternatives[answerIndex].isCorrect;
+    // Safely access the alternative
+    const alternative = currentQuestion.alternatives[answerIndex];
+    const isCorrect = alternative ? alternative.isCorrect : false;
     
     // Update state with answer result
     setQuizState((prev: QuizState) => {
+      // Ensure prev is valid
+      if (!prev) return initialQuizState;
+      
       const updatedState = {
         ...prev,
         correctAnswers: isCorrect ? prev.correctAnswers + 1 : prev.correctAnswers,
         incorrectAnswers: !isCorrect ? prev.incorrectAnswers + 1 : prev.incorrectAnswers,
         answeredQuestions: {
-          ...prev.answeredQuestions,
+          ...(prev.answeredQuestions || {}),
           [currentQuestion.id]: isCorrect,
         },
+        // Ensure wrongAnswers is initialized
+        wrongAnswers: prev.wrongAnswers || {}
       };
       
       // If answer is wrong, store the question and the correct answer for summary
-      if (!isCorrect) {
-        const correctAlternative = currentQuestion.alternatives.find(alt => alt.isCorrect);
+      if (!isCorrect && currentQuestion.alternatives) {
+        const correctAlternative = currentQuestion.alternatives.find(alt => alt && alt.isCorrect);
         updatedState.wrongAnswers = {
-          ...prev.wrongAnswers,
+          ...(prev.wrongAnswers || {}),
           [currentQuestion.id]: {
-            question: currentQuestion.text,
-            userAnswer: currentQuestion.alternatives[answerIndex].text,
-            correctAnswer: correctAlternative ? correctAlternative.text : '',
+            question: currentQuestion.text || 'Unknown question',
+            userAnswer: alternative ? alternative.text || 'Unknown answer' : 'Unknown answer',
+            correctAnswer: correctAlternative ? correctAlternative.text || 'Unknown correct answer' : 'Unknown correct answer',
           }
         };
       }
@@ -207,12 +250,18 @@ export function useQuiz(groups: Group[]) {
   // Check if all questions in the current group have been answered
   const isGroupCompleted = useCallback(() => {
     if (!currentGroup) return false;
+    if (!quizState.questionOrder || !Array.isArray(quizState.questionOrder)) return false;
+    
     return quizState.isCompleted || 
-           quizState.currentQuestionIndex >= quizState.questionOrder.length - 1;
-  }, [currentGroup, quizState.currentQuestionIndex, quizState.questionOrder.length, quizState.isCompleted]);
+           (quizState.currentQuestionIndex >= quizState.questionOrder.length - 1 && 
+            quizState.questionOrder.length > 0);
+  }, [currentGroup, quizState.currentQuestionIndex, quizState.questionOrder, quizState.isCompleted]);
 
-  // Get wrong answers for summary
+  // Get wrong answers for summary with safety checks
   const getWrongAnswers = useCallback(() => {
+    if (!quizState.wrongAnswers || typeof quizState.wrongAnswers !== 'object') {
+      return [];
+    }
     return Object.values(quizState.wrongAnswers);
   }, [quizState.wrongAnswers]);
 
@@ -221,21 +270,40 @@ export function useQuiz(groups: Group[]) {
     setSelectedAnswerIndex(null);
     
     // Find the group to make sure it exists
-    const groupExists = groups.some(group => group.id === groupId);
+    const groupExists = safeGroups.some(group => group.id === groupId);
+    const defaultGroupId = safeGroups.length > 0 ? safeGroups[0].id : 1;
     
+    // Create a fresh state with validated groupId
     setQuizState({
       ...initialQuizState,
-      currentGroupId: groupExists ? groupId : (groups[0]?.id || 1),
+      currentGroupId: groupExists ? groupId : defaultGroupId,
       questionOrder: [], // Reset question order to trigger randomization
+      wrongAnswers: {}, // Reset wrong answers
+      answeredQuestions: {}, // Reset answered questions
+      correctAnswers: 0, // Reset correct answers count
+      incorrectAnswers: 0, // Reset incorrect answers count
+      currentQuestionIndex: 0, // Ensure we start at the first question
+      isCompleted: false, // Reset completion status
+      lastUpdated: new Date().toISOString() // Update timestamp
     });
-  }, [groups]);
+  }, [safeGroups]);
   
   // Clear saved state and reset quiz
   const resetQuiz = useCallback(() => {
     setShowFeedback(false);
     setSelectedAnswerIndex(null);
-    setQuizState(initialQuizState);
-  }, []);
+    
+    // Get the default group ID if available
+    const defaultGroupId = safeGroups.length > 0 ? safeGroups[0].id : initialQuizState.currentGroupId;
+    
+    // Reset with a fresh state but keep the current group if it exists
+    setQuizState({
+      ...initialQuizState,
+      currentGroupId: defaultGroupId,
+      questionOrder: [], // Reset question order to trigger randomization
+      lastUpdated: new Date().toISOString() // Update timestamp
+    });
+  }, [safeGroups]);
   
   return {
     quizState,
