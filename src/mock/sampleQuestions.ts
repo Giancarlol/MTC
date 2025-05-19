@@ -43,7 +43,7 @@ export const mockGroups: Group[] = [
           { text: "Se deben encender las luces direccionales primero, buscar una brecha y realizar el cambio de carril con precaución", isCorrect: true },
           { text: "Se debe encontrar una brecha, luego cambiar de carril con precaución; no es necesario el uso de luces direccionales para cambios de carril", isCorrect: false },
           { text: "Se debe advertir utilizando el claxon, identificar una brecha y realizar el cambio de carril con precaución", isCorrect: false },
-          { text: "Está prohibido el cambio de car consenting", isCorrect: false }
+          { text: "Está prohibido el cambio de carril en vias de un solo snetido", isCorrect: false }
         ]
       },
       {
